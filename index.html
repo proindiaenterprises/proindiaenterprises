@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pro India Enterprises | Manufacturer in India</title>
+
+<meta name="description" content="Pro India Enterprises - Leading Manufacturer of High Quality Industrial Products in India">
+<meta name="keywords" content="manufacturer, industrial products, India">
+<meta name="author" content="Pro India Enterprises">
+
+<style>
+body { margin:0; font-family:Arial; }
+
+/* Navbar */
+header {
+    background:#ffc527;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+header a {
+    color:rgb(0, 0, 0);
+    margin:15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Pages */
+.page {
+    display:none;
+    opacity:0;
+    transform:translateX(50px);
+    transition:0.5s;
+    padding:40px;
+    text-align:center;
+}
+.page.active {
+    display:block;
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* Hero */
+.hero {
+    background:url('hero.jpeg') center/cover;
+    .hero h1, .hero h2, .hero button{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1s ease forwards;
+}
+
+.hero h2{
+    animation-delay:0.3s;
+}
+
+.hero button{
+    animation-delay:0.6s;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+    color:rgb(24, 23, 23);
+    padding:120px 20px;
+    text-align:left;      
+    padding-left:10px;
+}
+
+/* Products */
+.products {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.product {
+    width:250px;
+    margin:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:10px;
+    background:#ffe176
+}
+.product img {
+    width:100%;
+    border-radius:10px;e
+}
+
+/* Form */
+input, textarea {
+    width:90%;
+    padding:10px;
+    margin:5px;
+}
+
+/* Button */
+button {
+    padding:10px 20px;
+    background:#0d3b66;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* WhatsApp */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:rgb(253, 204, 41);
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* Footer */
+footer {
+    background:#333;
+    color:rgb(255, 224, 46);
+    text-align:center;
+    padding:10px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .products { flex-direction:column; align-items:center; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page">
+    <div class="hero">
+        <h1>Pro India Enterprises</h1>
+        <h2>High Quality Manufacturing Solutions</h2>
+        <a href="catalog.pdf"><button>Download Catalog</button></a>
+    </div>
+
+    <h2>Featured Products</h2>
+    <img src="p1.jpg" alt="Product 1" width="200">
+    <img src="p2.jpg" alt="Product 2" width="200">
+    <img src="P3.jpg" alt="Product 3" width="200">
+    <!-- FACTORY SECTION -->
+<div class="factory-section">
+
+    <h2>Our Manufacturing Unit</h2>
+
+<table width="100%" cellpadding="20">
+    <tr>
+        <!-- LEFT TEXT -->
+        <td width="50%" valign="top">
+            <p>
+                Pro India Enterprises operates a modern manufacturing facility
+                equipped with advanced machinery and skilled workforce.
+            </p>
+
+            <p>
+                We ensure high-quality production standards, bulk order capacity,
+                and timely delivery for all our clients.
+            </p>
+
+            <p>✔ 10+ Years Experience</p>
+            <p>✔ Bulk Production Available</p>
+            <p>✔ Quality Assured Products</p>
+        </td>
+
+        <!-- RIGHT IMAGE -->
+        <td width="50%" align="center">
+            <img src="factory.jpg.jpg" width="600">
+        </td>
+    </tr>
+</table>
+
+</div>
+          
+<script>
+function sendToWhatsApp(e){
+    e.preventDefault(); // 🔥 form reload rokega
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
+
+    var url = "https://wa.me/9029382272?text="
+    + "*New Inquiry*%0a%0a"
+    + "*Name:* " + name + "%0a"
+    + "*Email:* " + email + "%0a"
+    + "*Phone:* " + phone + "%0a"
+    + "*Requirement:* " + message;
+
+    window.open(url, '_blank');
+}
+</script>        
+<h2>Get Best Price / Inquiry</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <input type="text" id="phone" placeholder="Your Phone"><br>
+    <textarea id="message" placeholder="Your Requirement"></textarea><br>
+
+    <button type="submit">Send Message</button>
+
+</form>
+    
+
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" class="page">
+    <h1>Our Products</h1>
+    <div id="product-list" class="products"></div>
+    <h2>Get Best Price / Inquiry</h2>
+
+    <script>
+function sendToWhatsApp(e){
+    e.preventDefault(); // 🔥 form reload rokega
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
+
+    var url = "https://wa.me/9029382272?text="
+    + "*New Inquiry*%0a%0a"
+    + "*Name:* " + name + "%0a"
+    + "*Email:* " + email + "%0a"
+    + "*Phone:* " + phone + "%0a"
+    + "*Requirement:* " + message;
+
+    window.open(url, '_blank');
+}
+</script>        
+<h2>Get Best Price / Inquiry</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <input type="text" id="phone" placeholder="Your Phone"><br>
+    <textarea id="message" placeholder="Your Requirement"></textarea><br>
+
+    <button type="submit">Send Message</button>
+
+</form>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+    <h1>About Us</h1>
+
+    <p>
+        Pro India Enterprises is a trusted manufacturing company delivering
+        high-quality industrial products with precision and reliability.
+    </p>
+
+    <!-- 🔥 YAHAN SE PASTE KARO -->
+    
+    <table width="100%" cellpadding="20">
+        <tr>
+            <td width="50%">
+                <img src="manufacring (2).jpg" width="100%">
+            </td>
+            <td width="50%" valign="top">
+                <h3>Our Manufacturing Unit</h3>
+                <p>
+                    Our factory is equipped with advanced machinery and ensures
+                    bulk production with high quality standards.
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="50%" valign="top">
+                <h3>Quality Assurance</h3>
+                <p>
+                    We follow strict quality control processes to deliver
+                    reliable and durable products to our clients.
+                </p>
+            </td>
+            <td width="50%">
+                <img src="manufacring.jpg" width="100%">
+            </td>
+        </tr>
+    </table>
+
+    <!-- 🔥 GOOGLE MAP -->
+    <h2>Our Location</h2>
+
+    <iframe 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.6890078955903!2d78.0519135!3d27.8738505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a5efb3102dbb%3A0xe8010a1eefcaefcd!2zUFJPIElORElBIEVOVEVSUFJJU0VTIPCfh67wn4ez!5e1!3m2!1sen!2sin!4v1776333465663!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </iframe>
+
+    </p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+    <h1>Contact Us</h1>
+
+   <script>
+function sendToWhatsApp(e){
+    e.preventDefault(); // 🔥 form reload rokega
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
+
+    var url = "https://wa.me/9029382272?text="
+    + "*New Inquiry*%0a%0a"
+    + "*Name:* " + name + "%0a"
+    + "*Email:* " + email + "%0a"
+    + "*Phone:* " + phone + "%0a"
+    + "*Requirement:* " + message;
+
+    window.open(url, '_blank');
+}
+</script>        
+<h2>Get Best Price / Inquiry</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <input type="text" id="phone" placeholder="Your Phone"><br>
+    <textarea id="message" placeholder="Your Requirement"></textarea><br>
+
+    <button type="submit">Send Message</button>
+
+</form>
+       <br>
+    <a href="catalog.pdf"><button>Download Catalog</button></a>
+</div>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/919029382272" target="_blank">💬</a>
+
+<footer>
+    © 2026 Pro India Enterprises
+</footer>
+
+<script>
+
+/* Dynamic Products */
+const products = [
+    {name:"Product 1", image:"p1.jpg"},
+    {name:"Product 2", image:"p2.jpg"},
+    {name:"Product 3", image:"p3.jpg"},
+    {name:"Product 4", image:"p4.jpg"},
+    {name:"Product 5", image:"p5.jpg"},
+    {name:"Product 6", image:"p6.jpg"},
+    {name:"Product 7", image:"p7.jpg"},
+    {name:"Product 8", image:"p8.jpg"},
+    {name:"Product 9", image:"p9.jpg"},
+    {name:"Product 10", image:"p10.jpg"},
+    {name:"Product 11", image:"p11.jpg"},
+    {name:"Product 12", image:"p12.jpg"},
+    {name:"Product 13", image:"p13.jpg"},
+    {name:"Product 14", image:"p14.jpg"},
+    {name:"Product 15", image:"p15.jpg"},
+    {name:"Product 16", image:"p16.jpg"},
+    {name:"Product 17", image:"p17.jpg"},
+    {name:"Product 18", image:"p18.jpg"},
+    {name:"Product 19", image:"p19.jpg"},
+    {name:"Product 20", image:"p20.jpg"}
+];
+
+const container = document.getElementById("product-list");
+
+products.forEach(p => {
+    container.innerHTML += `
+        <div class="product">
+            <img src="${p.image}" alt="${p.name}">
+            <h3>${p.name}</h3>
+        </div>
+    `;
+});
+
+/* Page Routing */
+function showPage() {
+    let hash = window.location.hash || "#home";
+
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+
+    let activePage = document.querySelector(hash);
+    if(activePage) activePage.classList.add("active");
+}
+
+window.addEventListener("hashchange", showPage);
+window.addEventListener("load", showPage);
+
+</script>
+
+</body>
+</html>
